@@ -1,0 +1,17 @@
+.home-page {
+    background-color: #E5E5E5;
+}
+
+.header-bg {
+    height: 200px;
+    width: 100%;
+    background-color: #FBD062;
+    transform: skewY(-5deg);
+    position: absolute;
+    top: 60vh;
+}
+
+main {
+    background-color: #FBD062;
+    position: relative;
+}

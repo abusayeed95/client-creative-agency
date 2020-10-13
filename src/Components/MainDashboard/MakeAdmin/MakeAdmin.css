@@ -1,0 +1,17 @@
+.make-admin-form {
+    margin: 3rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    min-height: 15rem;
+}
+
+.form-control {
+    width: 70%;
+    display: inline-block;
+}
+
+.custom {
+    padding: 1rem 3rem;
+    margin-left: .5rem;
+}

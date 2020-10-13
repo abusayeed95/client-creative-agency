@@ -1,0 +1,9 @@
+footer {
+    background-color: #FBD062;
+    padding: 2rem 3rem;
+}
+
+footer .form-control {
+    margin-bottom: 1rem;
+    width: 100%;
+}

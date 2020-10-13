@@ -1,0 +1,11 @@
+.form-group .form-control {
+    width: 100%;
+}
+
+.add-service-form {
+    width: 90%;
+    background-color: #fff;
+    margin: 3rem;
+    padding: 2rem;
+    border-radius: 10px;
+}

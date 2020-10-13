@@ -1,0 +1,17 @@
+.feedback-area {
+    min-height: 70vh;
+}
+
+.feedback-container {
+    margin: 0 5rem;
+}
+
+.feedback-box {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #BFBFBF;
+    border-radius: 5px;
+    background-color: #fff;
+    max-height: 200px;
+    overflow: hidden;
+}

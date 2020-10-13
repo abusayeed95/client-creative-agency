@@ -1,0 +1,23 @@
+.login-page {
+    height: 100vh;
+}
+
+.login-box {
+    padding: 10rem 3rem;
+    border: 1px solid #ABABAB;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.login-box button {
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #ABABAB;
+    padding: .5rem 0;
+    font-weight: 500;
+}
+
+.login-box button:hover {
+    background-color: #FBD062
+}
