@@ -11,6 +11,7 @@ export const UserContext = createContext();
 
 const App = () => {
   const [user, setUser] = React.useState({});
+
   return (
     <UserContext.Provider value={[user, setUser]}>
       <BrowserRouter>

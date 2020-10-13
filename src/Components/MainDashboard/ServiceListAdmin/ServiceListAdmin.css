@@ -1,0 +1,12 @@
+.service-area {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.table th {
+    width: 20%;
+    background-color: #ABABAB;
+    height: 30px;
+    overflow: hidden;
+}

@@ -5,17 +5,20 @@ import AddService from '../AddService/AddService';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Order from '../Order/Order';
 import Review from '../Review/Review';
-import ServiceList from '../ServiceList/ServiceList';
 import logo from '../../../assets/logo.png';
 import './Dashboard.css'
+import { UserContext } from '../../../App';
+import ServiceListAdmin from '../ServiceListAdmin/ServiceListAdmin';
+import ServiceListCustomer from '../ServiceListCustomer/ServiceListCustomer';
 
 const Dashboard = () => {
+    const [user, setUser] = React.useContext(UserContext);
     return (
-        <Tab.Container id="left-tabs-example" defaultActiveKey="service-list">
+        <Tab.Container id="left-tabs-example" defaultActiveKey="order">
             <Row className="m-0">
                 <Col sm={2}>
                     <div className="nav-container">
-                        <Nav variant="pills" className="flex-column">
+                        <Nav className="flex-column">
                             <Nav.Item>
                                 <Link to="/home">
                                     <img height="47px" src={logo} alt="logo" className="my-3" />
@@ -25,17 +28,28 @@ const Dashboard = () => {
                                 <Nav.Link eventKey="order">Order</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="service-list">Service List</Nav.Link>
+                                <Nav.Link eventKey="service-list-customer">Service List</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link eventKey="review">Review</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="add-service">Add Service</Nav.Link>
+                                <Nav.Link eventKey="service-list-admin">Service List</Nav.Link>
                             </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="make-admin">Make Admin</Nav.Link>
-                            </Nav.Item>
+                            {/* {
+                                user.isAdmin &&
+                                <>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="service-list-admin">Service List</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="add-service">Add Service</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="make-admin">Make Admin</Nav.Link>
+                                    </Nav.Item>
+                                </>
+                            } */}
                         </Nav>
                     </div>
                 </Col>
@@ -44,8 +58,11 @@ const Dashboard = () => {
                         <Tab.Pane eventKey="order">
                             <Order />
                         </Tab.Pane>
-                        <Tab.Pane eventKey="service-list">
-                            <ServiceList />
+                        <Tab.Pane eventKey="service-list-admin">
+                            <ServiceListAdmin />
+                        </Tab.Pane>
+                        <Tab.Pane eventKey="service-list-customer">
+                            <ServiceListCustomer />
                         </Tab.Pane>
                         <Tab.Pane eventKey="review">
                             <Review />

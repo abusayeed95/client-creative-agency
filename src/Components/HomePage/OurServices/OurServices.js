@@ -27,12 +27,13 @@ import './OurServices.css'
 const OurServices = () => {
     const [services, setServices] = React.useState([]);
 
+
     React.useEffect(() => {
         fetch('http://localhost:3100/services')
             .then(res => res.json())
             .then(data => setServices(data))
-    }, [])
-    console.log(services)
+    }, []);
+
     return (
         <div className="service-area d-flex align-items-center">
             <div>

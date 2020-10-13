@@ -13,11 +13,18 @@ firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
     const [user, setUser] = React.useContext(UserContext);
+    const [admin, setAdmin] = React.useState(null)
     let history = useHistory();
     let location = useLocation();
 
     let { from } = location.state || { from: { pathname: "/" } };
 
+    React.useEffect(() => {
+        fetch('http://localhost:3100/admins')
+            .then(res => res.json())
+            .then(data => setAdmin(data));
+
+    }, [user])
 
     const handleLogin = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
@@ -25,7 +32,14 @@ const Login = () => {
         firebase.auth().signInWithPopup(provider)
             .then(result => {
                 const { displayName, email, photoURL, uid } = result.user;
-                setUser({ ...user, name: displayName, email, uid, photoURL });
+                let isAdmin = admin.filter(ad => ad.email === email);
+                if (isAdmin.length > 0) {
+                    isAdmin = true;
+                }
+                else {
+                    isAdmin = false;
+                }
+                setUser({ ...user, name: displayName, email, uid, photoURL, isAdmin });
                 history.replace(from)
             })
             .catch(error => {
