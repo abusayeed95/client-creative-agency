@@ -9,6 +9,7 @@ import Portfolio from '../Portfolio/Portfolio';
 import './Home.css'
 
 const Home = () => {
+    document.title = 'Home||Creative Agency'
     return (
         <div className="home-page">
             <main>

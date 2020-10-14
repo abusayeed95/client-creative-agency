@@ -1,10 +1,17 @@
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Col, Form, Row } from 'react-bootstrap';
+import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import './AddService.css';
 
 const AddService = () => {
     const [icon, setIcon] = React.useState(null);
     const [serviceDetails, setServiceDetails] = React.useState(null);
+    const [show, setShow] = React.useState(false);
+    const history = useHistory();
+
+    const handleClose = () => setShow(false);
 
     const handleChange = (e) => {
         setServiceDetails({ ...serviceDetails, [e.target.name]: e.target.value })
@@ -27,13 +34,30 @@ const AddService = () => {
             method: 'POST',
             body: formData
         })
-            .then(res => console.log(res))
+            .then(res => {
+                if (res.status === 200) {
+                    setShow(true);
+                }
+            })
             .catch(error => {
                 console.error(error)
             })
     };
     return (
         <>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Body>
+                    <h2 className="text-success"><FontAwesomeIcon icon={faCheckCircle} /> Service Added Successfully</h2>
+                </Modal.Body>
+                <Modal.Footer>
+                    <button className="brand-btn" onClick={handleClose}>
+                        Close
+                    </button>
+                    <button className="green-btn" onClick={() => history.push('/home')}>
+                        Home
+                    </button>
+                </Modal.Footer>
+            </Modal>
             <h2 className="py-3  bg-white">Add Service</h2>
             <div className="add-service">
                 <Form onSubmit={handleAddService}>

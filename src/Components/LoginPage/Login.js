@@ -16,8 +16,9 @@ const Login = () => {
     const [admin, setAdmin] = React.useState(null)
     let history = useHistory();
     let location = useLocation();
-
     let { from } = location.state || { from: { pathname: "/" } };
+
+    document.title = 'Login||Creative Agency'
 
     React.useEffect(() => {
         fetch('http://localhost:3100/admins')

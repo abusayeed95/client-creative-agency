@@ -13,6 +13,9 @@ const Feedback = () => {
             .catch(err => console.log(err))
     }, []);
 
+    const shuffle = feedbacks.sort(() => .5 - Math.random());
+    const shuffled6Feedbacks = shuffle.slice(0, 6) || shuffle;
+
     return (
         <div className="feedback-area d-flex align-items-center">
             <div>
@@ -20,7 +23,7 @@ const Feedback = () => {
                 <div className="feedback-container">
                     <Row className="m-0">
                         {
-                            feedbacks.map(feedback => <FeedbackBox key={feedback._id} feedback={feedback} />)
+                            shuffled6Feedbacks.map(feedback => <FeedbackBox key={feedback._id} feedback={feedback} />)
                         }
                     </Row>
                 </div>

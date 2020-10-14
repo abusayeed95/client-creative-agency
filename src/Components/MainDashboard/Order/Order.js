@@ -1,5 +1,8 @@
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Col, Form, Row } from 'react-bootstrap';
+import { Col, Form, Modal, Row } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import './Order.css';
 
@@ -7,6 +10,10 @@ const Order = () => {
     const [user, setUser] = React.useContext(UserContext);
     const [order, setOrder] = React.useState({});
     const [projectImg, setProjectImg] = React.useState(null);
+    const [show, setShow] = React.useState(false);
+    const history = useHistory();
+
+    const handleClose = () => setShow(false);
 
     const handleChange = (e) => {
         setOrder({ ...order, [e.target.name]: e.target.value });
@@ -35,13 +42,31 @@ const Order = () => {
             method: 'POST',
             body: formData
         })
-            .then(res => console.log(res))
+            .then(res => {
+                if (res.status === 200) {
+                    setShow(true);
+                }
+            })
             .catch(error => {
                 console.error(error)
             })
     };
     return (
         <>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Body>
+                    <h2 className="text-success"><FontAwesomeIcon icon={faCheckCircle} /> Order Confirmed</h2>
+                    <h5>You can see status of your order in service list...</h5>
+                </Modal.Body>
+                <Modal.Footer>
+                    <button className="brand-btn" onClick={handleClose}>
+                        Close
+                    </button>
+                    <button className="green-btn" onClick={() => history.push('/home')}>
+                        Home
+                    </button>
+                </Modal.Footer>
+            </Modal>
             <h2 className="py-3 bg-white">Make Order</h2>
             <div className="order-form-area">
                 <div className="order-form">

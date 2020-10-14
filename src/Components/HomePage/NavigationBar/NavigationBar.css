@@ -1,0 +1,11 @@
+.navigation-bar .nav-link {
+    margin-right: 2rem;
+    font-weight: 700;
+    color: #474747;
+    border-bottom: 4px solid #FBD062;
+    transition: .3s ease;
+}
+
+.navigation-bar .nav-link:hover {
+    border-bottom: 4px solid #009444;
+}

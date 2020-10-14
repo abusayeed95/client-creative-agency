@@ -27,12 +27,14 @@ import './OurServices.css'
 const OurServices = () => {
     const [services, setServices] = React.useState([]);
 
-
     React.useEffect(() => {
         fetch('http://localhost:3100/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, []);
+
+    const shuffle = services.sort(() => .5 - Math.random());
+    const shuffled6Services = shuffle.slice(0, 6) || shuffle;
 
     return (
         <div className="service-area d-flex align-items-center">
@@ -43,7 +45,7 @@ const OurServices = () => {
                 <div className="service-container ">
                     <Row className="m-0">
                         {
-                            services.map(service => <ServiceBox key={service._id} service={service} />)
+                            shuffled6Services.map(service => <ServiceBox key={service._id} service={service} />)
                         }
                     </Row>
                 </div>

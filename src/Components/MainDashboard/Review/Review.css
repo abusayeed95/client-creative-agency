@@ -2,3 +2,7 @@
     width: 70%;
     padding: 3rem;
 }
+
+.review-form .form-control {
+    width: 100%;
+}

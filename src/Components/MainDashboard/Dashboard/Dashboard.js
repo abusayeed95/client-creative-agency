@@ -10,11 +10,15 @@ import './Dashboard.css'
 import { UserContext } from '../../../App';
 import ServiceListAdmin from '../ServiceListAdmin/ServiceListAdmin';
 import ServiceListCustomer from '../ServiceListCustomer/ServiceListCustomer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faShoppingBag, faShoppingCart, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots } from '@fortawesome/free-regular-svg-icons';
 
 const Dashboard = () => {
     const [user, setUser] = React.useContext(UserContext);
+    document.title = 'Dashboard||Creative Agency'
     return (
-        <Tab.Container id="left-tabs-example" defaultActiveKey="order">
+        <Tab.Container id="left-tabs-example" defaultActiveKey={user.isAdmin ? 'service-list-admin' : 'order'}>
             <Row className="m-0">
                 <Col sm={2}>
                     <div className="nav-container">
@@ -25,31 +29,31 @@ const Dashboard = () => {
                                 </Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="order">Order</Nav.Link>
+                                <Nav.Link eventKey="order"><FontAwesomeIcon icon={faShoppingCart} /> Order</Nav.Link>
                             </Nav.Item>
+                            {
+                                user.isAdmin ? null :
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="service-list-customer"><FontAwesomeIcon icon={faShoppingBag} /> Service List</Nav.Link>
+                                    </Nav.Item>
+                            }
                             <Nav.Item>
-                                <Nav.Link eventKey="service-list-customer">Service List</Nav.Link>
+                                <Nav.Link eventKey="review"><FontAwesomeIcon icon={faCommentDots} /> Review</Nav.Link>
                             </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="review">Review</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="service-list-admin">Service List</Nav.Link>
-                            </Nav.Item>
-                            {/* {
+                            {
                                 user.isAdmin &&
                                 <>
                                     <Nav.Item>
-                                        <Nav.Link eventKey="service-list-admin">Service List</Nav.Link>
+                                        <Nav.Link eventKey="service-list-admin"><FontAwesomeIcon icon={faShoppingBag} /> Service List</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link eventKey="add-service">Add Service</Nav.Link>
+                                        <Nav.Link eventKey="add-service"><FontAwesomeIcon icon={faPlus} /> Add Service</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link eventKey="make-admin">Make Admin</Nav.Link>
+                                        <Nav.Link eventKey="make-admin"><FontAwesomeIcon icon={faUserPlus} /> Make Admin</Nav.Link>
                                     </Nav.Item>
                                 </>
-                            } */}
+                            }
                         </Nav>
                     </div>
                 </Col>
