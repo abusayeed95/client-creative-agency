@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Spinner } from 'react-bootstrap';
-import FeedbackBox from '../FeedbackBox./FeedbackBox';
+import FeedbackBox from '../FeedbackBox/FeedbackBox';
 import './Feedback.css'
 
 const Feedback = () => {
