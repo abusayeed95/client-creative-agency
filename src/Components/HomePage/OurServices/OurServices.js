@@ -43,7 +43,7 @@ const OurServices = () => {
                 shuffled6Services.length > 0 ?
                     <div className="service-area d-flex align-items-center">
                         <div>
-                            <h2 className="text-center navy-blue-text font-weight-bold my-5 pt-5">
+                            <h2 className="text-center navy-blue-text font-weight-bold my-md-3 pt-md-3">
                                 Provide Awesome <span className="green-text">Services</span>
                             </h2>
                             <div className="service-container ">
