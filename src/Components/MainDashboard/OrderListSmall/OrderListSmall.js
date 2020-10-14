@@ -9,14 +9,14 @@ const OrderListSmall = ({ order }) => {
                 <Row className="m-0">
                     <Col className="mb-3 d-flex flex-column align-items-center" xs={12}>
                         <img height="100px" src={`data:${order.thumbnailType};base64,${order.thumbnailImg}`} alt={order.service} />
-                        <h4>{order.service}</h4>
+                        <h4 className="font-weight-bold">{order.service}</h4>
                     </Col>
                     <Col className="d-flex flex-column align-items-center" xs={12}>
-                        <h5 className="font-weight-bold">Ordered by: {order.name}</h5>
+                        <h5 ><strong>Ordered by: {order.name}</strong></h5>
                         <p><strong>Email: {order.email}</strong></p>
-                        <p>State: {order.state}</p>
-                        <p>Description: </p>
-                        <p>{order.description}</p>
+                        <p style={{ color: 'white', backgroundColor: order.state === 'done' ? 'green' : '#FFCC00', borderRadius: '3px', display: 'inline-block', padding: '.5rem 1rem' }}>State: {order.state}</p>
+                        <p><strong>Description: </strong></p>
+                        <p>{order.orderDescription}</p>
                     </Col>
                 </Row>
             </div>

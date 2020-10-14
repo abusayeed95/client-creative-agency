@@ -6,7 +6,7 @@
     height: 200px;
     width: 100%;
     background-color: #FBD062;
-    transform: skewY(-5deg);
+    transform: skewY(-3deg);
     position: absolute;
     top: 53vh;
 }
@@ -16,6 +16,6 @@ main {
     position: relative;
 }
 
-.header {
-    min-height: 60vh;
-}
+/* .header {
+    min-height: 20rem;
+} */

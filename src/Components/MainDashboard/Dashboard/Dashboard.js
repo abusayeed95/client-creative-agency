@@ -23,37 +23,35 @@ const Dashboard = () => {
             <Row className="m-0">
                 <Col xs={1} lg={2}>
                     <div className="nav-container">
+                        <Link to="/home">
+                            <img src={logo} alt="logo" className="my-3 my-lg-3 img-fluid" />
+                        </Link>
                         <Nav className="flex-column">
-                            <Nav.Item>
-                                <Link to="/home">
-                                    <img src={logo} alt="logo" className="my-3 my-lg-3 img-fluid" />
-                                </Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="order"><FontAwesomeIcon icon={faShoppingCart} title="Order" /> <span className="d-none d-lg-inline-block">Order</span></Nav.Link>
-                            </Nav.Item>
                             {
-                                user.isAdmin ? null :
-                                    <Nav.Item>
-                                        <Nav.Link eventKey="service-list-customer"><FontAwesomeIcon icon={faShoppingBag} title="Service List" /> <span className="d-none d-lg-inline-block">Service List</span></Nav.Link>
-                                    </Nav.Item>
-                            }
-                            <Nav.Item>
-                                <Nav.Link eventKey="review"><FontAwesomeIcon icon={faCommentDots} title="Review" /> <span className="d-none d-lg-inline-block">Review</span></Nav.Link>
-                            </Nav.Item>
-                            {
-                                user.isAdmin &&
-                                <>
-                                    <Nav.Item>
-                                        <Nav.Link eventKey="service-list-admin"><FontAwesomeIcon icon={faShoppingBag} title="Service List" /> <span className="d-none d-lg-inline-block">Service List</span></Nav.Link>
-                                    </Nav.Item>
-                                    <Nav.Item>
-                                        <Nav.Link eventKey="add-service"><FontAwesomeIcon icon={faPlus} title="Add Service" /> <span className="d-none d-lg-inline-block">Add Service</span></Nav.Link>
-                                    </Nav.Item>
-                                    <Nav.Item>
-                                        <Nav.Link eventKey="make-admin"><FontAwesomeIcon icon={faUserPlus} title="Make Admin" /> <span className="d-none d-lg-inline-block">Make Admin</span></Nav.Link>
-                                    </Nav.Item>
-                                </>
+                                user.isAdmin ?
+                                    <>
+                                        <Nav.Item>
+                                            <Nav.Link eventKey="service-list-admin"><FontAwesomeIcon icon={faShoppingBag} title="Service List" /> <span className="d-none d-lg-inline-block">Service List</span></Nav.Link>
+                                        </Nav.Item>
+                                        <Nav.Item>
+                                            <Nav.Link eventKey="add-service"><FontAwesomeIcon icon={faPlus} title="Add Service" /> <span className="d-none d-lg-inline-block">Add Service</span></Nav.Link>
+                                        </Nav.Item>
+                                        <Nav.Item>
+                                            <Nav.Link eventKey="make-admin"><FontAwesomeIcon icon={faUserPlus} title="Make Admin" /> <span className="d-none d-lg-inline-block">Make Admin</span></Nav.Link>
+                                        </Nav.Item>
+                                    </>
+                                    :
+                                    <>
+                                        <Nav.Item>
+                                            <Nav.Link eventKey="service-list-customer"><FontAwesomeIcon icon={faShoppingBag} title="Service List" /> <span className="d-none d-lg-inline-block">Service List</span></Nav.Link>
+                                        </Nav.Item>
+                                        <Nav.Item>
+                                            <Nav.Link eventKey="review"><FontAwesomeIcon icon={faCommentDots} title="Review" /> <span className="d-none d-lg-inline-block">Review</span></Nav.Link>
+                                        </Nav.Item>
+                                        <Nav.Item>
+                                            <Nav.Link eventKey="order"><FontAwesomeIcon icon={faShoppingCart} title="Order" /> <span className="d-none d-lg-inline-block">Order</span></Nav.Link>
+                                        </Nav.Item>
+                                    </>
                             }
                         </Nav>
                     </div>

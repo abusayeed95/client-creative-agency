@@ -4,3 +4,12 @@
     border-radius: 10px;
     background-color: white;
 }
+
+@media (max-width:576px) {
+    .box p {
+        font-size: .8rem;
+    }
+    .box h5 {
+        font-size: 1rem;
+    }
+}

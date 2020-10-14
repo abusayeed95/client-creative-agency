@@ -21,3 +21,10 @@
 .login-box button:hover {
     background-color: #FBD062
 }
+
+@media (max-width:576px) {
+    .login-box {
+        padding: 10rem 2rem;
+        margin: 1rem;
+    }
+}

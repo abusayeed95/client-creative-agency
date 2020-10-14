@@ -17,7 +17,7 @@ const Portfolio = () => {
     };
     return (
         <div className="portfolio">
-            <h2 className="text-white text-center font-weight-bold py-5 my-5">Here are Some of <span className="green-text">Our Works</span></h2>
+            <h2 className="text-white text-center font-weight-bold py-2 py-md-5 my-md-5">Here are Some of <span className="green-text">Our Works</span></h2>
             <div className="carousel-box">
                 <Slider {...settings}>
                     <div className="carousel-image"><img className="img-fluid" src={portfolio1} alt="Carousel" /></div>

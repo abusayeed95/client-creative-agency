@@ -1,5 +1,4 @@
 .portfolio {
-    min-height: 70vh;
     background-color: #111430;
 }
 
@@ -30,5 +29,6 @@
     .carousel-image img {
         width: 70%;
         margin-bottom: 1rem;
+        padding: 0;
     }
 }
