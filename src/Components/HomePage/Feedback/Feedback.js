@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Spinner } from 'react-bootstrap';
 import FeedbackBox from '../FeedbackBox/FeedbackBox';
-import './Feedback.css'
+import './Feedback.css';
 
 const Feedback = () => {
     const [feedbacks, setFeedbacks] = React.useState([]);
@@ -17,6 +17,7 @@ const Feedback = () => {
     const shuffled6Feedbacks = shuffle.slice(0, 6) || shuffle;
 
     return (
+
         <>
             {
                 shuffled6Feedbacks.length > 0 ?

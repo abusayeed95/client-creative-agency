@@ -2,9 +2,6 @@ import React from 'react';
 import './Portfolio.css';
 import portfolio1 from '../../../assets/carousel-1.png';
 import portfolio2 from '../../../assets/carousel-2.png';
-import portfolio3 from '../../../assets/carousel-3.png';
-import Carousel, { Dots, slidesToShowPlugin } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -14,13 +11,9 @@ const Portfolio = () => {
         className: "center",
         centerMode: true,
         infinite: true,
-        centerPadding: "60px",
-        slidesToScroll: 1,
-        autoplay: true,
         slidesToShow: 2,
-        speed: 2000,
-        autoplaySpeed: 2000,
-        dots: true,
+        speed: 500,
+        autoplay: true
     };
     return (
         <div className="portfolio">

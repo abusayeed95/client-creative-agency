@@ -10,11 +10,21 @@
 .feedback-box {
     padding: 1rem;
     margin-bottom: 2rem;
-    border: 1px solid #BFBFBF;
     border-radius: 5px;
-    background-color: #fff;
-    max-height: 200px;
-    overflow: auto;
+}
+
+.feedback-card {
+    border-radius: 5px;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.5s;
+    will-change: transform;
+    margin: 2rem;
+    min-height: 15rem;
+}
+
+.feedback-card:hover {
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+    background: #FBD062;
 }
 
 @media (max-width: 768px) {

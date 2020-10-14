@@ -23,7 +23,7 @@ const ServiceBox = ({ service }) => {
 
         <Col xs={12} md={6} lg={4}>
             <animated.div
-                class="card"
+                class="service-card"
                 onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
                 onMouseLeave={() => set({ xys: [0, 0, 1] })}
                 style={{ transform: props.xys.interpolate(trans) }}
