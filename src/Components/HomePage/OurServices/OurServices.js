@@ -1,28 +1,7 @@
 import React from 'react';
 import { Col, Row, Spinner } from 'react-bootstrap';
 import ServiceBox from '../ServiceBox/ServiceBox';
-import './OurServices.css'
-
-// const fakeServices = [
-//     {
-//         name: 'Web and Mobile Design',
-//         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, distinctio incidunt, pariatur voluptate recusandae rem quibusdam, blanditiis accusantium nobis fugiat necessitatibus esse.',
-//         img: 'https://i.ibb.co/8xZpYLp/service1.png',
-//         _id: 222
-//     },
-//     {
-//         name: 'Graphic Design',
-//         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, distinctio incidunt, pariatur voluptate recusandae rem quibusdam, blanditiis accusantium nobis fugiat necessitatibus esse.',
-//         img: 'https://i.ibb.co/0h6HRD6/service2.png',
-//         _id: 333
-//     },
-//     {
-//         name: 'Web Development',
-//         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, distinctio incidunt, pariatur voluptate recusandae rem quibusdam, blanditiis accusantium nobis fugiat necessitatibus esse.',
-//         img: 'https://i.ibb.co/DMjkhBX/service5.png',
-//         _id: 444
-//     }
-// ]
+import './OurServices.css';
 
 const OurServices = () => {
     const [services, setServices] = React.useState([]);
@@ -35,8 +14,6 @@ const OurServices = () => {
 
     const shuffle = services.sort(() => .5 - Math.random());
     const shuffled6Services = shuffle.slice(0, 6) || shuffle;
-
-
     return (
         <>
             {
@@ -62,7 +39,6 @@ const OurServices = () => {
                     </div>
             }
         </>
-
     );
 };
 
