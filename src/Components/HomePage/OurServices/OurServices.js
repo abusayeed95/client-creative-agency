@@ -28,7 +28,7 @@ const OurServices = () => {
     const [services, setServices] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('http://localhost:3100/services')
+        fetch('https://pacific-depths-60044.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, []);

@@ -21,7 +21,7 @@ const Login = () => {
     document.title = 'Login||Creative Agency'
 
     React.useEffect(() => {
-        fetch('http://localhost:3100/admins')
+        fetch('https://pacific-depths-60044.herokuapp.com/admins')
             .then(res => res.json())
             .then(data => setAdmin(data));
 

@@ -20,7 +20,7 @@ const Review = () => {
     const handleFeedback = (e) => {
         e.preventDefault();
         setReview({ ...review, name: user.name, img: user.photoURL })
-        fetch('http://localhost:3100/add-feedback', {
+        fetch('https://pacific-depths-60044.herokuapp.com/add-feedback', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(review)

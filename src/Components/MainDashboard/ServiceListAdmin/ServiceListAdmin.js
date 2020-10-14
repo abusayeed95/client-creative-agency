@@ -7,7 +7,7 @@ const ServiceListAdmin = () => {
     const [orders, setOrders] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('http://localhost:3100/orders')
+        fetch('https://pacific-depths-60044.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [])

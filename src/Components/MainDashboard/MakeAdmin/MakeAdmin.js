@@ -18,7 +18,7 @@ const MakeAdmin = () => {
 
     const handleMakeAdmin = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3100/add-admin', {
+        fetch('https://pacific-depths-60044.herokuapp.com/add-admin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(admin)

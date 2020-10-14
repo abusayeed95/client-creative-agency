@@ -7,8 +7,8 @@ const Introduction = () => {
     return (
         <div className="introduction">
             <Row className="m-0">
-                <Col className="m-auto pr-5" xs={5}>
-                    <h1 className="navy-blue-text font-weight-bold">
+                <Col className="m-auto pr-md-5" xs={12} md={6} >
+                    <h1 className="navy-blue-text font-weight-bold display-6">
                         Let’s Grow Your <br />
                         Brand To The <br />
                         Next Level
@@ -18,7 +18,7 @@ const Introduction = () => {
                     </p>
                     <button className="brand-btn">Hire Us</button>
                 </Col>
-                <Col xs={7}>
+                <Col xs={12} md={6} >
                     <img className="img-fluid" src={introImg} alt="Introduction" />
                 </Col>
             </Row>

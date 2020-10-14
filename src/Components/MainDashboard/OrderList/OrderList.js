@@ -12,7 +12,7 @@ const OrderList = ({ order }) => {
     const handleClose = () => setShow(false);
 
     const handleChange = (e) => {
-        fetch(`http://localhost:3100/order-state/${order._id}`, {
+        fetch(`https://pacific-depths-60044.herokuapp.com/order-state/${order._id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ state: e.target.value })

@@ -1,8 +1,8 @@
-.all-company img {
-    height: 50px;
+.company-container {
+    margin: auto;
+    padding-top: 5rem;
 }
 
-.company-container {
-    margin: 2rem 5rem;
-    padding-top: 5rem;
+.company-img {
+    min-height: 100px;
 }

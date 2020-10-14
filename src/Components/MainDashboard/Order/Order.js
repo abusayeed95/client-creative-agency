@@ -38,7 +38,7 @@ const Order = () => {
         formData.append('thumbnailImg', user.thumbnailImg);
         formData.append('serviceDescription', user.serviceDescription);
 
-        fetch('http://localhost:3100/add-orders', {
+        fetch('https://pacific-depths-60044.herokuapp.com/add-orders', {
             method: 'POST',
             body: formData
         })

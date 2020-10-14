@@ -1,3 +1,15 @@
 .introduction {
     margin: 5rem 10rem;
 }
+
+@media(min-width:400px) {
+    .introduction {
+        margin: 1rem 3rem;
+    }
+}
+
+@media(min-width:700px) {
+    .introduction {
+        margin: 2rem 5rem;
+    }
+}

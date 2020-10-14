@@ -1,4 +1,4 @@
-.service-box :hover {
+.service-box:hover {
     background-color: #fff;
     border-radius: 10px;
     cursor: pointer;

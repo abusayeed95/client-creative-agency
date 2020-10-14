@@ -8,7 +8,7 @@ const ServiceListCustomer = () => {
     const [user, setUser] = React.useContext(UserContext)
 
     React.useEffect(() => {
-        fetch(`http://localhost:3100/users-orders/?email=${user.email}`)
+        fetch(`https://pacific-depths-60044.herokuapp.com/users-orders/?email=${user.email}`)
             .then(res => res.json())
             .then(data => setUserOrder(data))
     }, [])

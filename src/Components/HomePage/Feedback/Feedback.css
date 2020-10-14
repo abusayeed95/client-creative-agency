@@ -16,3 +16,15 @@
     max-height: 200px;
     overflow: hidden;
 }
+
+@media(min-width:400px) {
+    .feedback-container {
+        margin: 0 2rem;
+    }
+}
+
+@media(min-width:700px) {
+    .feedback-container {
+        margin: 0 3rem;
+    }
+}

@@ -6,11 +6,11 @@ const Footer = () => {
     return (
         <footer>
             <Row className="m-0 pl-5">
-                <Col className="px-5" xs={6}>
+                <Col className="px-5" xs={12} md={6}>
                     <h2 className="navy-blue-text font-weight-bold">Let Us Handle Your <br /> Project,  Professionally</h2>
                     <p>With well written codes, we build amazing apps for all platforms, mobile and web apps in general.</p>
                 </Col>
-                <Col xs={6}>
+                <Col xs={12} md={6}>
                     <Form>
                         <Form.Control type="email" placeholder="Your Email Address" />
                         <Form.Control type="text" placeholder="Your Name/Company's Name" />
