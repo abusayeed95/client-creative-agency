@@ -4,7 +4,7 @@ import './UsersOrder.css';
 
 const UsersOrder = ({ order }) => {
     return (
-        <Col xs={5}>
+        <Col xs={12} md={6}>
             <div className="order-container bg-white">
                 <div className="d-flex justify-content-between">
                     <img height="50px" src={`data:${order.thumbnailType};base64,${order.thumbnailImg}`} alt={order.service} />

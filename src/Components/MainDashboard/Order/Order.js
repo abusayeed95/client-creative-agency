@@ -81,7 +81,7 @@ const Order = () => {
                             </Col>
                             <Col xs={12} md={6}>
                                 <label for="file-upload" className="file-upload">
-                                    <p><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Resources</p>
+                                    <p><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Resources*</p>
                                     <input onChange={handleFile} name="file" id="file-upload" type="file" required />
                                 </label>
                             </Col>

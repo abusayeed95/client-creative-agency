@@ -14,7 +14,7 @@ const OrderListSmall = ({ order }) => {
                     <Col className="d-flex flex-column align-items-center" xs={12}>
                         <h5 ><strong>Ordered by: {order.name}</strong></h5>
                         <p><strong>Email: {order.email}</strong></p>
-                        <p style={{ color: 'white', backgroundColor: order.state === 'done' ? 'green' : '#FFCC00', borderRadius: '3px', display: 'inline-block', padding: '.5rem 1rem' }}>State: {order.state}</p>
+                        <p className={order.state === 'Done' && 'bg-success'} style={{ color: 'white', backgroundColor: order.state === 'Pending' ? 'red' : '#FFCC00', borderRadius: '3px', display: 'inline-block', padding: '.5rem 1rem' }}>State: {order.state}</p>
                         <p><strong>Description: </strong></p>
                         <p>{order.orderDescription}</p>
                     </Col>
