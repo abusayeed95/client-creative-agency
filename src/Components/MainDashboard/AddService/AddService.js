@@ -1,7 +1,7 @@
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
+import { Col, Form, Modal, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import './AddService.css';
 
@@ -63,7 +63,7 @@ const AddService = () => {
                 <Form onSubmit={handleAddService}>
                     <div className="add-service-form">
                         <Row className="m-0">
-                            <Col xs={4}>
+                            <Col xs={12} md={6} lg={4}>
                                 <Form.Group>
                                     <Form.Label><strong>Title</strong></Form.Label>
                                     <Form.Control onChange={handleChange} name="title" type="text" placeholder="Enter Title" required />
@@ -73,19 +73,13 @@ const AddService = () => {
                                     <Form.Control onChange={handleChange} name="description" as="textarea" rows={5} placeholder="Write Description" required />
                                 </Form.Group>
                             </Col>
-                            <Col xs={4}>
-                                <Form.Group>
-                                    <Form.Label>
-                                        <strong>Icon</strong>
-                                    </Form.Label>
-                                    <Form.Control
-                                        onChange={handleFile}
-                                        type="file"
-                                        required
-                                    />
-                                </Form.Group>
+                            <Col xs={12} md={3} lg={4}>
+                                <label for="icon-upload" className="file-upload">
+                                    <p><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Icon</p>
+                                    <input onChange={handleFile} name="file" id="icon-upload" type="file" required />
+                                </label>
                             </Col>
-                            <Col className="d-flex justify-content-end align-items-end" xs={4}>
+                            <Col className="d-flex justify-content-end align-items-end" xs={12} md={3} lg={4}>
                                 <button className="green-btn">Submit</button>
                             </Col>
                         </Row>

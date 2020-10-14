@@ -7,6 +7,17 @@
     font-size: 1.2rem;
     font-weight: 600;
     color: #111430;
+    padding: 1rem 0;
+    margin: auto;
+    display: inline-block;
+}
+
+.nav-container .nav-item {
+    margin: auto;
+}
+
+.nav-container .col-1, .col-lg-2 {
+    padding: 0;
 }
 
 .nav-container .active {

@@ -55,7 +55,11 @@ const OurServices = () => {
                             </div>
                         </div>
                     </div> :
-                    <Spinner animation="border" variant="success" />
+                    <div style={{ minHeight: '50vh' }} className="d-flex justify-content-center align-items-center">
+                        <div>
+                            <Spinner style={{ width: '70px', height: '70px' }} animation="border" variant="success" />
+                        </div>
+                    </div>
             }
         </>
 

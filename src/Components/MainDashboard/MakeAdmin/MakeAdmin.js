@@ -1,7 +1,7 @@
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Col, Form, Modal, Row } from 'react-bootstrap';
+import { Form, Modal } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import './MakeAdmin.css';
 

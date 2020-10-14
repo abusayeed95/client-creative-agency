@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import FeedbackBox from '../FeedbackBox./FeedbackBox';
 import './Feedback.css'
 
@@ -17,18 +17,28 @@ const Feedback = () => {
     const shuffled6Feedbacks = shuffle.slice(0, 6) || shuffle;
 
     return (
-        <div className="feedback-area d-flex align-items-center">
-            <div>
-                <h3 className="text-center navy-blue-text font-weight-bold mb-5">Clients<span className="green-text">Feedback</span></h3>
-                <div className="feedback-container">
-                    <Row className="m-0">
-                        {
-                            shuffled6Feedbacks.map(feedback => <FeedbackBox key={feedback._id} feedback={feedback} />)
-                        }
-                    </Row>
-                </div>
-            </div>
-        </div>
+        <>
+            {
+                shuffled6Feedbacks.length > 0 ?
+                    <div className="feedback-area d-flex align-items-center">
+                        <div>
+                            <h3 className="text-center navy-blue-text font-weight-bold mb-5">Clients<span className="green-text">Feedback</span></h3>
+                            <div className="feedback-container">
+                                <Row className="m-0">
+                                    {
+                                        shuffled6Feedbacks.map(feedback => <FeedbackBox key={feedback._id} feedback={feedback} />)
+                                    }
+                                </Row>
+                            </div>
+                        </div>
+                    </div> :
+                    <div style={{ minHeight: '50vh' }} className="d-flex justify-content-center align-items-center">
+                        <div>
+                            <Spinner style={{ width: '70px', height: '70px' }} animation="border" variant="success" />
+                        </div>
+                    </div>
+            }
+        </>
     );
 };
 

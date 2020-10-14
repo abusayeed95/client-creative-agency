@@ -8,10 +8,14 @@
     background-color: #FBD062;
     transform: skewY(-5deg);
     position: absolute;
-    top: 60vh;
+    top: 53vh;
 }
 
 main {
     background-color: #FBD062;
     position: relative;
+}
+
+.header {
+    min-height: 60vh;
 }

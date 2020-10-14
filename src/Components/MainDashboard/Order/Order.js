@@ -1,4 +1,4 @@
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Form, Modal, Row } from 'react-bootstrap';
@@ -76,11 +76,14 @@ const Order = () => {
                         <Form.Control onChange={handleChange} name="serviceName" type="text" placeholder="Service Name" value={user.service} required />
                         <Form.Control onChange={handleChange} name="orderDescription" as="textarea" rows={5} placeholder="Project Details" required />
                         <Row className="m-0">
-                            <Col xs={6} className="pl-0">
+                            <Col xs={12} lg={6} className="pl-0">
                                 <Form.Control onChange={handleChange} name="price" type="text" placeholder="Price" required />
                             </Col>
-                            <Col xs={6}>
-                                <Form.Control onChange={handleFile} name="file" type="file" required />
+                            <Col xs={12} md={6}>
+                                <label for="file-upload" className="file-upload">
+                                    <p><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Resources</p>
+                                    <input onChange={handleFile} name="file" id="file-upload" type="file" required />
+                                </label>
                             </Col>
                         </Row>
                         <button type="submit" className="brand-btn">Send</button>
