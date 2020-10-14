@@ -9,3 +9,10 @@
 .navigation-bar .nav-link:hover {
     border-bottom: 4px solid #009444;
 }
+
+@media(max-width:576) {
+    .navigation-bar button {
+        font-size: .8rem;
+        padding: .3rem 2rem;
+    }
+}

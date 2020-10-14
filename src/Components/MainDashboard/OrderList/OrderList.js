@@ -46,9 +46,10 @@ const OrderList = ({ order }) => {
             <td>{order.service}</td>
             <td><small>{order.orderDescription}</small></td>
             <td>
-                <Form.Control id="dropdown" className={order.state === 'pending' && 'text-danger'} style={{ color: `${order.state === 'On Going' ? 'orange' : 'green'}` }} onChange={handleChange} as="select" name="state" value={order.state || 'Pending'}>
+                <Form.Control id="dropdown" className={order.state === 'Pending' && 'text-danger'} style={{ color: `${order.state === 'On Going' ? 'orange' : 'green'}` }} onChange={handleChange} as="select" name="state" value={order.state}>
+                    <option value="Pending">Pending</option>
                     <option value="On Going">On Going</option>
-                    <option value="done">Done</option>
+                    <option value="Done">Done</option>
                 </Form.Control>
             </td>
         </tr>

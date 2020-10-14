@@ -22,7 +22,7 @@ const Feedback = () => {
                 shuffled6Feedbacks.length > 0 ?
                     <div className="feedback-area d-flex align-items-center">
                         <div>
-                            <h3 className="text-center navy-blue-text font-weight-bold mb-5">Clients<span className="green-text">Feedback</span></h3>
+                            <h3 className="text-center navy-blue-text font-weight-bold mb-5">Clients <span className="green-text">Feedback</span></h3>
                             <div className="feedback-container">
                                 <Row className="m-0">
                                     {

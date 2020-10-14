@@ -14,9 +14,12 @@ const Portfolio = () => {
         className: "center",
         centerMode: true,
         infinite: true,
-        // centerPadding: "60px",
+        centerPadding: "60px",
+        slidesToScroll: 1,
+        autoplay: true,
         slidesToShow: 2,
-        speed: 1000,
+        speed: 2000,
+        autoplaySpeed: 2000,
         dots: true,
     };
     return (

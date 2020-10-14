@@ -7,3 +7,16 @@ footer .form-control {
     margin-bottom: 1rem;
     width: 100%;
 }
+
+@media (max-width: 576px) {
+    footer {
+        padding: 1rem .5rem;
+    }
+    footer h2 {
+        font-size: 1.2rem;
+    }
+    footer button {
+        font-size: .8rem;
+        padding: .3rem 2rem;
+    }
+}

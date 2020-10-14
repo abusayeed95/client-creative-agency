@@ -10,7 +10,7 @@ import { Col, Row } from 'react-bootstrap';
 const CompaniesWeServed = () => {
     return (
         <div className="company-container">
-            <Row className="d-flex justify-content-center">
+            <Row className="d-flex justify-content-center m-0">
                 <Col xs={6} md={4} lg={2} className="company-img d-flex justify-content-center"><img height="50px" src={slack} alt="Slack" /></Col>
                 <Col xs={6} md={4} lg={2} className="company-img d-flex justify-content-center"><img height="50px" src={google} alt="Google" /></Col>
                 <Col xs={6} md={4} lg={2} className="company-img d-flex justify-content-center"><img height="50px" src={uber} alt="Uber" /></Col>

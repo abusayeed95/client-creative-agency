@@ -3,5 +3,41 @@
 }
 
 .service-container {
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
+}
+
+@media (max-width: 992px) {
+    .service-area h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-area h2 {
+        font-size: 1.5rem;
+    }
+    .service-area h4 {
+        font-size: 1.5rem;
+    }
+    .service-area p {
+        font-size: 1rem;
+    }
+    .service-container {
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-area h2 {
+        font-size: 1rem;
+    }
+    .service-area h4 {
+        font-size: 1.2rem;
+    }
+    .service-area p {
+        font-size: .8rem;
+    }
+    .service-container {
+        margin-bottom: 1rem;
+    }
 }

@@ -1,9 +1,27 @@
 .portfolio {
-    height: 85vh;
+    min-height: 70vh;
     background-color: #111430;
+}
+
+.carousel-box {
+    overflow: hidden;
 }
 
 .carousel-image img {
     width: 70%;
     margin-bottom: 5rem;
+}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {
+    .portfolio h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio h2 {
+        font-size: 1.4rem;
+    }
 }

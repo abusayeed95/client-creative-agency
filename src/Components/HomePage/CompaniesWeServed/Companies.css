@@ -6,3 +6,15 @@
 .company-img {
     min-height: 100px;
 }
+
+@media (max-width: 768px) {
+    .company-container img {
+        height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .company-container img {
+        height: 30px;
+    }
+}
