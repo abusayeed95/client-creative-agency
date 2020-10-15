@@ -15,11 +15,11 @@
 
 .feedback-card {
     border-radius: 5px;
-    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ABABAB;
     transition: box-shadow 0.5s;
     will-change: transform;
     margin: 2rem;
-    min-height: 15rem;
+    min-height: 10rem;
 }
 
 .feedback-card:hover {

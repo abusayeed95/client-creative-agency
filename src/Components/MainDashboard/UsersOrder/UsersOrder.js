@@ -8,7 +8,7 @@ const UsersOrder = ({ order }) => {
             <div className="order-container bg-white">
                 <div className="d-flex justify-content-between">
                     <img height="50px" src={`data:${order.thumbnailType};base64,${order.thumbnailImg}`} alt={order.service} />
-                    <span>{order.state}</span>
+                    <span style={{ color: order.state === 'Pending' ? '#FF4545' : order.state === 'On Going' ? '#FF8000' : '#009444', backgroundColor: order.state === 'Pending' ? '#FFE3E3' : order.state === 'On Going' ? '#FFFF99' : '#C6FFE0' }}>{order.state}</span>
                 </div>
                 <h4>{order.service}</h4>
                 <p><small>{order.serviceDescription}</small></p>

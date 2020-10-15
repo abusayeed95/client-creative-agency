@@ -27,29 +27,33 @@ const Order = () => {
 
     const handleOrder = (e) => {
         e.preventDefault();
-        const formData = new FormData()
-        formData.append('projectImg', projectImg);
-        formData.append('service', user.service);
-        formData.append('orderDescription', order.orderDescription);
-        formData.append('name', user.name || order.name);
-        formData.append('email', user.email || order.email);
-        formData.append('price', order.price);
-        formData.append('thumbnailType', user.thumbnailType);
-        formData.append('thumbnailImg', user.thumbnailImg);
-        formData.append('serviceDescription', user.serviceDescription);
+        if (projectImg === null) { alert("Please Upload Your Resources before submit") }
+        else {
+            const formData = new FormData()
+            formData.append('projectImg', projectImg);
+            formData.append('service', user.service);
+            formData.append('orderDescription', order.orderDescription);
+            formData.append('name', user.name || order.name);
+            formData.append('email', user.email || order.email);
+            formData.append('price', order.price);
+            formData.append('thumbnailType', user.thumbnailType);
+            formData.append('thumbnailImg', user.thumbnailImg);
+            formData.append('serviceDescription', user.serviceDescription);
 
-        fetch('https://pacific-depths-60044.herokuapp.com/add-orders', {
-            method: 'POST',
-            body: formData
-        })
-            .then(res => {
-                if (res.status === 200) {
-                    setShow(true);
-                }
+            fetch('https://pacific-depths-60044.herokuapp.com/add-orders', {
+                method: 'POST',
+                body: formData
             })
-            .catch(error => {
-                console.error(error)
-            })
+                .then(res => {
+                    if (res.status === 200) {
+                        setShow(true);
+                    }
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+        }
+
     };
     return (
         <>
@@ -82,7 +86,7 @@ const Order = () => {
                             <Col xs={12} md={6}>
                                 <label for="file-upload" className="file-upload">
                                     <p><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Resources*</p>
-                                    <input onChange={handleFile} name="file" id="file-upload" type="file" required />
+                                    <input onChange={handleFile} name="file" id="file-upload" type="file" />
                                 </label>
                             </Col>
                         </Row>

@@ -5,6 +5,11 @@
     background-color: white;
 }
 
+#dropdown-small {
+    width: auto;
+    border: none;
+}
+
 @media (max-width:576px) {
     .box p {
         font-size: .8rem;

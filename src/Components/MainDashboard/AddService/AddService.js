@@ -25,23 +25,26 @@ const AddService = () => {
 
     const handleAddService = (e) => {
         e.preventDefault();
-        const formData = new FormData()
-        formData.append('icon', icon);
-        formData.append('title', serviceDetails.title);
-        formData.append('description', serviceDetails.description);
+        if (icon === null) { alert("Please Upload a new icon before submit") }
+        else {
+            const formData = new FormData()
+            formData.append('icon', icon);
+            formData.append('title', serviceDetails.title);
+            formData.append('description', serviceDetails.description);
 
-        fetch('https://pacific-depths-60044.herokuapp.com/add-services', {
-            method: 'POST',
-            body: formData
-        })
-            .then(res => {
-                if (res.status === 200) {
-                    setShow(true);
-                }
+            fetch('https://pacific-depths-60044.herokuapp.com/add-services', {
+                method: 'POST',
+                body: formData
             })
-            .catch(error => {
-                console.error(error)
-            })
+                .then(res => {
+                    if (res.status === 200) {
+                        setShow(true);
+                    }
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+        }
     };
     return (
         <>
@@ -76,7 +79,7 @@ const AddService = () => {
                             <Col xs={12} md={3} lg={4}>
                                 <label for="icon-upload" className="file-upload">
                                     <p><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Icon</p>
-                                    <input onChange={handleFile} name="file" id="icon-upload" type="file" required />
+                                    <input onChange={handleFile} name="file" id="icon-upload" type="file" />
                                 </label>
                             </Col>
                             <Col className="d-flex justify-content-end align-items-end" xs={12} md={3} lg={4}>

@@ -44,7 +44,7 @@ const Login = () => {
                 history.replace(from)
             })
             .catch(error => {
-                console.log(error)
+                alert(error.message)
             });
     }
     return (
@@ -55,7 +55,7 @@ const Login = () => {
                     <div className="login-info d-flex flex-column align-items-center">
                         <h3 className="mb-4">Login With</h3>
                         <button onClick={handleLogin} className="mb-3"><FontAwesomeIcon icon={faGoogle} /> Login With Google</button>
-                        <p>Don't have an Account? <a href="#">Create a new account</a></p>
+                        <p>Don't have an Account? <Link to='/login'>Create a new account</Link></p>
                     </div>
                 </div>
             </div>

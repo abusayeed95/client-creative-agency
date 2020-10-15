@@ -19,7 +19,9 @@ const Dashboard = () => {
     const [user, setUser] = React.useContext(UserContext);
     document.title = 'Dashboard||Creative Agency'
     return (
-        <Tab.Container defaultActiveKey={user.isAdmin ? 'service-list-admin' : 'order'}>
+        <Tab.Container defaultActiveKey={
+            `${user.isAdmin ? 'service-list-admin' : user.service ? 'order' : 'service-list-customer'}`
+        }>
             <Row className="m-0">
                 <Col xs={1} lg={2}>
                     <div className="nav-container">

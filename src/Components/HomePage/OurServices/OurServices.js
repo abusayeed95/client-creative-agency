@@ -13,11 +13,11 @@ const OurServices = () => {
     }, []);
 
     const shuffle = services.sort(() => .5 - Math.random());
-    const shuffled6Services = shuffle.slice(0, 6) || shuffle;
+    const shuffled6Services = services.slice(0, 6) || services;
     return (
         <>
             {
-                shuffled6Services.length > 0 ?
+                services.length > 0 ?
                     <div className="service-area d-flex align-items-center">
                         <div>
                             <h2 className="text-center navy-blue-text font-weight-bold my-md-3 pt-md-3">
