@@ -31,7 +31,7 @@ const OrderList = ({ order }) => {
     }
     return (
         <tr>
-            <Modal show={show} onHide={handleClose}>
+            <Modal centered show={show} onHide={handleClose}>
                 <Modal.Body>
                     <h2 className="text-success"><FontAwesomeIcon icon={faCheckCircle} /> State Updated Successfully</h2>
                 </Modal.Body>

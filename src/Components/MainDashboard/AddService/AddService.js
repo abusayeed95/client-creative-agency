@@ -1,4 +1,4 @@
-import { faCheckCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faCloudUploadAlt, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Form, Modal, Row } from 'react-bootstrap';
@@ -9,6 +9,7 @@ const AddService = () => {
     const [icon, setIcon] = React.useState(null);
     const [serviceDetails, setServiceDetails] = React.useState(null);
     const [show, setShow] = React.useState(false);
+    const [iconError, setIconError] = React.useState(false);
     const history = useHistory();
 
     const handleClose = () => setShow(false);
@@ -20,12 +21,13 @@ const AddService = () => {
     const handleFile = (e) => {
         const newIcon = e.target.files[0];
         setIcon(newIcon);
+        setIconError(false);
     }
 
 
     const handleAddService = (e) => {
         e.preventDefault();
-        if (icon === null) { alert("Please Upload a new icon before submit") }
+        if (icon === null) { setIconError(true) }
         else {
             const formData = new FormData()
             formData.append('icon', icon);
@@ -48,7 +50,7 @@ const AddService = () => {
     };
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
+            <Modal centered show={show} onHide={handleClose}>
                 <Modal.Body>
                     <h2 className="text-success"><FontAwesomeIcon icon={faCheckCircle} /> Service Added Successfully</h2>
                 </Modal.Body>
@@ -81,6 +83,9 @@ const AddService = () => {
                                     <p><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Icon</p>
                                     <input onChange={handleFile} name="file" id="icon-upload" type="file" />
                                 </label>
+                                {
+                                    iconError ? <p className="text-danger font-weight-bold"> <FontAwesomeIcon icon={faTimesCircle} /> Please upload an icon for this service.</p> : null
+                                }
                             </Col>
                             <Col className="d-flex justify-content-end align-items-end" xs={12} md={3} lg={4}>
                                 <button className="green-btn">Submit</button>

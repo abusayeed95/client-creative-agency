@@ -34,7 +34,7 @@ const MakeAdmin = () => {
     }
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
+            <Modal centered show={show} onHide={handleClose}>
                 <Modal.Body>
                     <h2 className="text-success"><FontAwesomeIcon icon={faCheckCircle} /> Admin Added Successfully</h2>
                     <h4>Now, he can operate this site as an admin...!</h4>

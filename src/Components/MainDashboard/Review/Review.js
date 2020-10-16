@@ -36,7 +36,7 @@ const Review = () => {
     }
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} centered onHide={handleClose}>
                 <Modal.Body>
                     <h2 className="text-success"><FontAwesomeIcon icon={faHandHoldingHeart} /> Thanks For Your FeedBack</h2>
                     <h5>Have a great day...</h5>

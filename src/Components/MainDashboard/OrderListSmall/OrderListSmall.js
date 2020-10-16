@@ -53,7 +53,7 @@ const OrderListSmall = ({ order }) => {
                     </Row>
                 </div>
             </Col >
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} centered onHide={handleClose}>
                 <Modal.Body>
                     <h2 className="text-success"><FontAwesomeIcon icon={faCheckCircle} /> State Updated Successfully</h2>
                 </Modal.Body>

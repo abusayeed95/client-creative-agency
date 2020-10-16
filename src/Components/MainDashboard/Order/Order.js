@@ -1,4 +1,4 @@
-import { faCheckCircle, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faCloudUploadAlt, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Form, Modal, Row } from 'react-bootstrap';
@@ -10,6 +10,7 @@ const Order = () => {
     const [user, setUser] = React.useContext(UserContext);
     const [order, setOrder] = React.useState({});
     const [projectImg, setProjectImg] = React.useState(null);
+    const [projectImgError, setProjectImgError] = React.useState(false);
     const [show, setShow] = React.useState(false);
     const history = useHistory();
 
@@ -23,11 +24,12 @@ const Order = () => {
     const handleFile = (e) => {
         const newImg = e.target.files[0];
         setProjectImg(newImg);
+        setProjectImgError(false);
     }
 
     const handleOrder = (e) => {
         e.preventDefault();
-        if (projectImg === null) { alert("Please Upload Your Resources before submit") }
+        if (projectImg === null) { setProjectImgError(true) }
         else {
             const formData = new FormData()
             formData.append('projectImg', projectImg);
@@ -57,7 +59,7 @@ const Order = () => {
     };
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} centered onHide={handleClose}>
                 <Modal.Body>
                     <h2 className="text-success"><FontAwesomeIcon icon={faCheckCircle} /> Order Confirmed</h2>
                     <h5>You can see status of your order in service list...</h5>
@@ -88,6 +90,9 @@ const Order = () => {
                                     <p><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload Resources*</p>
                                     <input onChange={handleFile} name="file" id="file-upload" type="file" />
                                 </label>
+                                {
+                                    projectImgError ? <p className="text-danger font-weight-bold"> <FontAwesomeIcon icon={faTimesCircle} /> Please upload resources for your Project</p> : null
+                                }
                             </Col>
                         </Row>
                         <button type="submit" className="brand-btn">Send</button>

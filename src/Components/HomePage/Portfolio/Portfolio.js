@@ -11,9 +11,10 @@ const Portfolio = () => {
         className: "center",
         centerMode: true,
         infinite: true,
-        slidesToShow: 2,
+        slidesToShow: 2.3,
         speed: 500,
-        autoplay: true
+        autoplay: true,
+        autoplaySpeed: 1000
     };
     return (
         <div className="portfolio">

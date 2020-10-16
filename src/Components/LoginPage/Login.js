@@ -8,12 +8,14 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import { firebaseConfig } from './firebaseConfig';
 import { UserContext } from '../../App';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
     const [user, setUser] = React.useContext(UserContext);
     const [admin, setAdmin] = React.useState(null)
+    const [error, setError] = React.useState(null)
     let history = useHistory();
     let location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
@@ -41,10 +43,13 @@ const Login = () => {
                     isAdmin = false;
                 }
                 setUser({ ...user, name: displayName, email, uid, photoURL, isAdmin });
+                setError(false);
                 history.replace(from)
             })
             .catch(error => {
-                alert(error.message)
+                if (error) {
+                    setError('Something went wrong... Please try again or Reload the page and try again')
+                }
             });
     }
     return (
@@ -56,6 +61,16 @@ const Login = () => {
                         <h3 className="mb-4">Login With</h3>
                         <button onClick={handleLogin} className="mb-3"><FontAwesomeIcon icon={faGoogle} /> Login With Google</button>
                         <p>Don't have an Account? <Link to='/login'>Create a new account</Link></p>
+                        {
+                            error ?
+                                <p className="font-weight-bold text-center text-danger">
+                                    <FontAwesomeIcon icon={faTimesCircle} /> Something Wrong happened... Please try again <br />
+                                    and if this happens frequently reload the page...
+                                </p>
+                                :
+                                null
+                        }
+
                     </div>
                 </div>
             </div>
