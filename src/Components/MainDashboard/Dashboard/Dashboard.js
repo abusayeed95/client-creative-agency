@@ -33,7 +33,7 @@ const Dashboard = () => {
                                 user.isAdmin ?
                                     <>
                                         <Nav.Item>
-                                            <Nav.Link eventKey="service-list-admin"><FontAwesomeIcon icon={faShoppingBag} title="Service List" /> <span className="d-none d-lg-inline-block">Service List</span></Nav.Link>
+                                            <Nav.Link eventKey="service-list-admin"><FontAwesomeIcon icon={faShoppingBag} title="Service List" /> <span className="d-none d-lg-inline-block">Order List</span></Nav.Link>
                                         </Nav.Item>
                                         <Nav.Item>
                                             <Nav.Link eventKey="add-service"><FontAwesomeIcon icon={faPlus} title="Add Service" /> <span className="d-none d-lg-inline-block">Add Service</span></Nav.Link>
@@ -45,13 +45,13 @@ const Dashboard = () => {
                                     :
                                     <>
                                         <Nav.Item>
-                                            <Nav.Link eventKey="service-list-customer"><FontAwesomeIcon icon={faShoppingBag} title="Service List" /> <span className="d-none d-lg-inline-block">Service List</span></Nav.Link>
+                                            <Nav.Link eventKey="order"><FontAwesomeIcon icon={faShoppingCart} title="Order" /> <span className="d-none d-lg-inline-block">Order</span></Nav.Link>
+                                        </Nav.Item>
+                                        <Nav.Item>
+                                            <Nav.Link eventKey="service-list-customer"><FontAwesomeIcon icon={faShoppingBag} title="Service List" /> <span className="d-none d-lg-inline-block">Order List</span></Nav.Link>
                                         </Nav.Item>
                                         <Nav.Item>
                                             <Nav.Link eventKey="review"><FontAwesomeIcon icon={faCommentDots} title="Review" /> <span className="d-none d-lg-inline-block">Review</span></Nav.Link>
-                                        </Nav.Item>
-                                        <Nav.Item>
-                                            <Nav.Link eventKey="order"><FontAwesomeIcon icon={faShoppingCart} title="Order" /> <span className="d-none d-lg-inline-block">Order</span></Nav.Link>
                                         </Nav.Item>
                                     </>
                             }

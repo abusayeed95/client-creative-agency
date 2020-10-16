@@ -62,7 +62,7 @@ const Order = () => {
             <Modal show={show} centered onHide={handleClose}>
                 <Modal.Body>
                     <h2 className="text-success"><FontAwesomeIcon icon={faCheckCircle} /> Order Confirmed</h2>
-                    <h5>You can see status of your order in service list...</h5>
+                    <h5>You can see status of your order in order list...</h5>
                 </Modal.Body>
                 <Modal.Footer>
                     <button className="brand-btn" onClick={handleClose}>
