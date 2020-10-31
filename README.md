@@ -5,6 +5,7 @@ Creative agency is website for an agency who provide some services to his client
 ## Technology
 
 **Front-end:** *React.js, JavaScript, ES6, React Router, Bootstrap, React Bootstrap, HTML5, CSS3, FontAwesomeIcon, React-Slick, etc.*
+
 **Back-end:** *Node.js, ExpressJS, MongoDB, Firebase, Cors, BodyParser, etc.*
 
 ## Key Features
